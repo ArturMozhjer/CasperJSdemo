@@ -1,0 +1,26 @@
+div.search-panel {
+	margin: 0 auto;
+	background-color: #006894;
+	border-radius: 5px;
+}
+div.search-panel input{
+	margin-left:15px;
+	float:left;
+	border:2px solid #006894;
+	padding:0px;
+	background-color: #006894;
+	color: white;
+	font-style: arial;
+}
+div.search-panel input:focus {
+	border:2px solid white;
+	border-radius: 4px;
+	outline-width:  0;
+}
+div.search-panel .button {
+	float:right;
+	background: url('../../../img/search.png') #a2a2a2 center no-repeat;
+	cursor:pointer;
+	border-radius: 3px;
+
+}

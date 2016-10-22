@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Red Price</title>
+	<meta charset="UTF-8">
+	<link href="css/main.css" rel="stylesheet">
+
+	<link href='https://fonts.googleapis.com/css?family=Didact+Gothic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+	<link href="app/components/landing-header/landing-header.css" rel="stylesheet">
+	<link href="app/components/search-panel/search-panel.css" rel="stylesheet">
+	<link href="app/components/search-results/search-results.css" rel="stylesheet">
+
+	<link href="app/pages/landing-page/landing-page.css" rel="stylesheet">
+</head>
+<body ng-app="redprice">
+
+	<ng-view></ng-view>
+
+	<script src="libs/angular/angular.js"></script>
+	<script src="libs/angular/angular-route.js"></script>
+
+	<script src="libs/jquery/jquery-1.11.3.js"></script>
+	<script src="libs/underscore/underscore.js"></script>
+
+	<script src="app/app.js"></script>
+	<script src="app/services/connection.srv.js"></script>
+	<script src="app/services/promotional_items.js"></script>
+	<script src="app/controllers/main.ctrl.js"></script>
+
+	<script src="app/pages/landing-page/landing-page.drv.js"></script>
+
+	<script src="app/components/landing-header/landing-header.drv.js"></script>
+	<script src="app/components/search-panel/search-panel.drv.js"></script>
+	<script src="app/components/search-results/search-results.drv.js"></script>
+
+</body>
+</html>
