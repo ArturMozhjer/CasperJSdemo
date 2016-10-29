@@ -6,6 +6,8 @@ angular.module('redprice').directive('landingHeader', [function() {
 		templateUrl: 'app/components/landing-header/landing-header.htm',
 		link: function(scope, el, attrs) {
 
+			App.resize(el);
+
 			App.applyScale(el);
 
 		},

@@ -34,9 +34,43 @@ App.resize = function(){
 
 	this.scale = Math.min(1, width/1040);
 
-	this.scale_search = Math.min(1, width/460);
+	this.scale_search = Math.min(1, width/500);
+
+	App.applyScaleSearch(document.body);
 
 	App.applyScale(document.body);
+
+};
+
+App.applyScaleSearch = function(el) {
+
+	var els = $(el).find('[stlS]');
+
+	_.each(els, function(el) {
+
+		var stl = $(el).attr('stlS');
+
+		var styles = stl.split(',');
+
+		_.each(styles, function(style){
+
+			var parts = style.split(':');
+
+			var name = parts[0];
+
+			var value_string = parts[1];
+
+			var values = value_string.split(' ');
+			//var value = '';
+
+			value = _.map(values, function(v){return App.transformValueSearch(v)}).join(' ');
+
+			//console.log(el, name, value);
+			$(el).css(name, value);
+
+		}, this);
+
+	}, this);
 
 };
 
@@ -72,12 +106,21 @@ App.applyScale = function(el) {
 
 };
 
-App.transformValue = function(value) {//console.log(this.scale_search);
+App.transformValueSearch = function(value) {//console.log(this.scale_search);
 	
 	if(value == 'auto') {
 		return value;
 	}
 	else {return  this.scale_search * parseFloat(value) + 'px'};
+
+};
+
+App.transformValue = function(value) {//console.log(this.scale_search);
+
+	if(value == 'auto') {
+		return value;
+	}
+	else {return  this.scale * parseFloat(value) + 'px'};
 
 };
 

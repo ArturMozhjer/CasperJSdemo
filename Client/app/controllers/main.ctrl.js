@@ -14,7 +14,7 @@ angular.module('redprice').controller('MainCtrl', ['$rootScope' ,'$scope', 'Prom
 
 		$scope.scale = Math.min(1, width/1040);
 
-		$scope.scale_search = Math.min(1, width/460);
+		$scope.scale_search = Math.min(1, width/500);
 
 		// так как мы используем внешнее событие - вручную запускаем обновление scope
 		if ($scope.$root.$$phase != '$apply' && $scope.$root.$$phase != '$digest') $scope.$apply();

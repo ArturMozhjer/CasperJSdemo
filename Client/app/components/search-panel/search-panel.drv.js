@@ -6,7 +6,8 @@ angular.module('redprice').directive('searchPanel', [function() {
 		templateUrl: 'app/components/search-panel/search-panel.htm',
 		link: function(scope, el, attrs) {
 
-			App.resize();
+			App.resize(el);
+
 			App.applyScale(el);
 
 		},

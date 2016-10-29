@@ -6,6 +6,10 @@ angular.module('redprice').directive('searchResults', [function() {
 		templateUrl: 'app/components/search-results/search-results.htm',
 		link: function(scope, el, attrs) {
 
+			App.resize(el);
+
+			App.applyScale(el);
+
 		},
 		controller: ['$scope', function($scope){
 

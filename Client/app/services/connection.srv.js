@@ -8,7 +8,7 @@ angular.module('redprice').service('ConnectionSrv', ['$rootScope', function($roo
 
 		socket.onopen = function() {
 
-			console.info("# Web Socket: connection established")
+			console.info("# Web Socket: connection established");
 
 		};
 

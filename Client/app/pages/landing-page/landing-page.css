@@ -1,6 +1,5 @@
 div.landing-page {
 	text-align:center;
 	background: url('../../../img/landing-backgroung.jpg') #ffffff top center repeat-y;
-	height:100%;
 	background-size: 100% auto;
 }
