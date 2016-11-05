@@ -167,7 +167,7 @@ RP.Prices = new Service({
 
 	getBestPrices: function(next) {
 
-		this.Model.find({}, 'Title Cost Image ImageUrl', {sort: {Title: 1}}, function(err, result) {
+		this.Model.find({}, 'Title Cost Image ImageUrl', {/*sort: {Title: 1}*/}, function(err, result) {
 
 			next(result);
 		})
@@ -180,7 +180,7 @@ RP.Prices = new Service({
 			var regexp = new RegExp(filter);
 
 
-			this.Model.find({Title: regexp}, 'Title Cost Image ImageUrl', {sort: {Title: 1}}, function(err, result) {
+			this.Model.find({Title: regexp}, 'Title Cost Image ImageUrl', {/*sort: {Title: 1}*/}, function(err, result) {
 
 					next(result);
 			})

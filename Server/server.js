@@ -8,7 +8,7 @@ var RP = global.RP = {
 
 };
 
-RP.Config = require('./config/Config');
+RP.Config = require('./Config/Config');
 
 // подключаем модуль http сервера
 var http = require('http');
