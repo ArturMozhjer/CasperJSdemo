@@ -1,6 +1,6 @@
 
 // имя процесса, можно увидеть через команду top
-process.title = 'redprice';
+process.title = 'casper-js-demo-artur';
 
 var RP = global.RP = {
 
@@ -52,7 +52,7 @@ RP.Express.use(express_body_parser.json());
 //Подключаемся к базе данных
 
 RP.Mongoose = require('mongoose');
-RP.Mongoose.connect('mongodb://localhost/redprices');
+RP.Mongoose.connect('mongodb://localhost/casper-js-demo-artur');
 
 RP.Database = RP.Mongoose.connection;
 RP.Database.on('error', console.error.bind(console, 'connection error:'));
