@@ -37,6 +37,8 @@ RP.Prices = new Service({
 	Events: {
 
 		'Database Ready': function(){
+console.log(RP.Mongo);
+			this.Collection = RP.Mongo.collection('Prices');
 
 			RP.Cache.create(this.Name, function(ready){
 
@@ -117,24 +119,28 @@ RP.Prices = new Service({
 
 	processNewPrices: function(prices) {
 
-		RP.Prices.Model.remove({}, function(){});
+		RP.Prices.Collection.remove({}, function(){});
 
 		_.each(prices, function(price_data){
 
-			var price = new RP.Prices.Model({
+			var price = RP.Collection.insert({
 				Title: price_data.Title,
 				Image: price_data.Image,
 				Cost: price_data.Cost,
 				ImageUrl: price_data.ImageUrl,
 				Date: price_data.Date
 
-			});
-1
-			price.save(function() {
+			}, function(err, price) {
 
-				//RP.Logger.debug('доюавлены новые скидки', price)
+				RP.Logger.debug('доюавлены новые скидки', price)
 
 			});
+
+//			price.save(function() {
+
+//				RP.Logger.debug('доюавлены новые скидки', price)
+
+//			});
 		});
 
 /*		_.each(prices, function(price_data){
@@ -167,7 +173,7 @@ RP.Prices = new Service({
 
 	getBestPrices: function(next) {
 
-		this.Model.find({}, 'Title Cost Image ImageUrl', {/*sort: {Title: 1}*/}, function(err, result) {
+		this.Collection.find({}, {Title: true, Cost: true, Image: true, ImageUrl: true}, {/*sort: {Title: 1}*/}).toArray(function(err, result) {
 
 			next(result);
 		})
@@ -180,7 +186,7 @@ RP.Prices = new Service({
 			var regexp = new RegExp(filter);
 
 
-			this.Model.find({Title: regexp}, 'Title Cost Image ImageUrl', {/*sort: {Title: 1}*/}, function(err, result) {
+			this.Collection.find({Title: regexp}, {Title: true, Cost: true, Image: true, ImageUrl: true}, {/*sort: {Title: 1}*/}).toArray(function(err, result) {
 
 					next(result);
 			})

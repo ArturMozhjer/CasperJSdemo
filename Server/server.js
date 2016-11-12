@@ -56,7 +56,14 @@ RP.Mongoose.connect('mongodb://localhost/casper-js-demo-artur');
 
 RP.Database = RP.Mongoose.connection;
 RP.Database.on('error', console.error.bind(console, 'connection error:'));
-RP.Database.once('open', function(){
+
+var MongoClient = require('mongodb').MongoClient;
+
+
+MongoClient.connect("mongodb://localhost/casper-js-demo-artur", function(err, db) {console.log('weiyfvw', db);
+	console.log('weiyfvw23535', err);
+
+	RP.Mongo = db;
 
 	RP.Logger.debug('Connection to databases established');
 
@@ -130,7 +137,7 @@ RP.Database.once('open', function(){
 
 
 
-	}, this);
+	}, {index: 'server'});
 
 
 });

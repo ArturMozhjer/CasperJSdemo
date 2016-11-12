@@ -4,7 +4,7 @@ angular.module('redprice').service('ConnectionSrv', ['$rootScope', function($roo
 
 	this.connect = function(main_scope) {
 
-		var socket = this.Socket = new WebSocket('ws://localhost:3000');
+		var socket = this.Socket = new WebSocket('ws://localhost:3001');
 
 		socket.onopen = function() {
 
