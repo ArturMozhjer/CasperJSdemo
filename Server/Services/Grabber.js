@@ -13,13 +13,13 @@ RP.Grabber = new Service({
 
 	run: function() {
 
-		this.runCasperProcess();
+//		this.runCasperProcess();
 
-		setInterval(function() {
+//		setInterval(function() {
 
-			RP.Grabber.runCasperProcess();
+//			RP.Grabber.runCasperProcess();
 
-		}, 30000000)
+//		}, 30000000)
 
 	},
 

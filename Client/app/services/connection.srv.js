@@ -5,7 +5,7 @@ angular.module('redprice').service('ConnectionSrv', ['$rootScope', function($roo
 	this.connect = function(main_scope) {
 
 		var socket = this.Socket = new WebSocket('ws://localhost:3001');
-
+		//var socket = this.Socket = new WebSocket('ws://5.45.119.19:3001');
 		socket.onopen = function() {
 
 			console.info("# Web Socket: connection established");
