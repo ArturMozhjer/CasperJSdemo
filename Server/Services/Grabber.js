@@ -23,14 +23,14 @@ RP.Grabber = new Service({
 
 	},
 
-	runCasperProcess: function() {
+	runCasperProcess: function() { console.log('casper1');
 
 		var spawn = require('child_process').spawn;
 		var prc = spawn('casperjs', ['Server/casper.js']);
-
+console.log('casper2');
 //noinspection JSUnresolvedFunction
 		prc.stdout.setEncoding('utf8');
-		prc.stdout.on('data', function (data) {
+		prc.stdout.on('data', function (data) { console.log('casper3');
 			var str = data.toString();
 			var lines = str.split(/(\r?\n)/g);
 			console.log(lines.join(""));
@@ -43,7 +43,7 @@ RP.Grabber = new Service({
 		});
 
 	},
-	startGrabbing: function() {
+	startGrabbing: function() {console.log('casperStartGrabbing');
 
 		RP.Grabber.openPage('http://www.ebay.com', '.ddcrd.daily-deal', {}, function() {
 
@@ -76,7 +76,7 @@ RP.Grabber = new Service({
 
 		});
 
-		function getLinks() {
+		function getLinks() { console.log('casperGetLinks');
 
 			//document.body.scrollTop = 10000;
 			//var links = document.querySelectorAll('.products_card');ddcrd daily-deal
@@ -99,7 +99,7 @@ RP.Grabber = new Service({
 		}
 
 	},
-	processQuery: function() {
+	processQuery: function() { console.log('casperProcessQuery');
 
 		var item = this.Query[0];
 		
