@@ -109,13 +109,13 @@ console.log('casper2');
 
 			this.Query.splice(0, 1);
 
-			RP.Grabber.openPage(item.ItemUrl, 'h1#itemTitle', {loadImages: false}, function() {console.log('item----111-------');
+			RP.Grabber.openPage(item.ItemUrl, 'div.refit-itemcard-detail', {loadImages: false}, function() {console.log('item----111-------');
 
 				var result = this.evaluate(function () {
 
                     var item = {};
 
-                    //item.Title = document.querySelector('h1#itemTitle').innerText;
+                    item.Title = document.querySelector('h3.refit-itemcard-title ellipse-3 span').innerText;
 
 					item.Date = new Date();
 
@@ -127,7 +127,7 @@ console.log('casper2');
 
 				result.Image = item.Image;
 
-				result.Title = item.Title;
+				//result.Title = item.Title;
 
                result.Cost = item.Cost;
 
