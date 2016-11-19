@@ -26,7 +26,7 @@ RP.Grabber = new Service({
 	runCasperProcess: function() {
 
 		var spawn = require('child_process').spawn;
-		var prc = spawn('casperjs', ['casper.js']);
+		var prc = spawn('casperjs', ['Server/casper.js']);
 
 //noinspection JSUnresolvedFunction
 		prc.stdout.setEncoding('utf8');

@@ -1,0 +1,48 @@
+Запуск сервера:
+
+1) запустить MongoDb сервис
+
+для Windows: mongod --dbpath C:/mongodb (папка для базы данных )
+
+2) запустить процесс ноды:
+2.1) Находясь в папке Server проекта, прописать: node server
+
+3)Запуск вручную граббер:
+3.1)Находясь в папке Server проекта, прописать: casperjs casper.js
+
+Смена кодировки командной строки в винде
+
+chcp 65001
+
+Освободить порт (нужно при ошибке EADDRINUSE)
+
+fuser -k 3000/tcp
+
+Обновляем систему и ставим зависимости:
+
+1 sudo apt-get update
+2 sudo apt-get install build-essential chrpath libssl-dev libxft-dev
+
+После этого ставим пакеты необходимые для корректной работы phantomjs:
+
+1 sudo apt-get install libfreetype6 libfreetype6-dev
+2 sudo apt-get install libfontconfig1 libfontconfig1-dev
+
+Для установки версии 2.1.1 делаем следующее:
+
+1 cd ~
+2 export PHANTOM_JS="phantomjs-2.1.1-linux-x86_64"
+3 wget https://bitbucket.org/ariya/phantomjs/downloads/$PHANTOM_JS.tar.bz2
+4 sudo tar xvjf $PHANTOM_JS.tar.bz2
+
+После распаковки архива переносим либы и линкуем бинарник:
+
+1 sudo mv $PHANTOM_JS /usr/local/share
+2 sudo ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/bin
+
+После этого проверяем что система видит бинарник и версия нужная нам:
+
+1 root@ca062:~# phantomjs --version
+2 2.1.1
+
+Собственно и все. Проверено на базе «Debian GNU/Linux 7»
