@@ -14,7 +14,7 @@ angular.module('redprice').service('PromoItems', ['$rootScope', function($rootSc
 
 		_.each(prices, function(rate) {
 
-			$rootScope.PromoItems.PricesHash[rate.id] = rate;
+			$rootScope.PromoItems.PricesHash[rate._id] = rate;
 
 		});
 
