@@ -115,7 +115,7 @@ console.log('casper2');
 
                     var item = {};
 
-                    item.Title = document.querySelector('h3.refit-itemcard-title ellipse-3 a').getAttribute('title');
+                    item.Title = document.querySelector('h3.refit-itemcard-title.ellipse-3 a').getAttribute('title');
 
 					item.Date = new Date();
 
