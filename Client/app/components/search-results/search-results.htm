@@ -5,7 +5,7 @@
 		}">
 			Ebay Daily Deals
 	</div>
-	<div class="promotional-items" ng-repeat="item in PromoItems.Items"
+	<div class="promotional-items" ng-repeat="item in PromoItems.Items | filter:filterResults"
 		 stl="margin-right:10,margin-left:10,margin-top:20">
 		<item-card></item-card>
 	</div>
