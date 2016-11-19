@@ -186,7 +186,7 @@ console.log('1222222222222222');
 				return this.evaluate(function(selector) {
 					document.body.scrollTop = 100000;
 					//return document.querySelectorAll('.products_card').length > 50;
-					return document.querySelectorAll(selector).length > 0;
+					return document.querySelectorAll(selector).length > 24;
 				}, {
                     selector: selector
                 });
