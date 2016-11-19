@@ -5,7 +5,7 @@ var RP = global.RP = {
 
 };
 
-RP.Config = require('./config/Config');
+RP.Config = require('./Config/Config');
 
 RP.Casper = require('casper').create({
 	//verbose: true,
