@@ -115,7 +115,7 @@ console.log('casper2');
 
                     var item = {};
 
-                    item.Title = document.querySelector('h3.refit-itemcard-title ellipse-3 span').innerText;
+                    item.Title = document.querySelector('h3.refit-itemcard-title ellipse-3 a span').innerText;
 
 					item.Date = new Date();
 
