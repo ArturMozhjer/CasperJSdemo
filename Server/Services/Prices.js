@@ -123,7 +123,7 @@ console.log(RP.Mongo);
 
 		_.each(prices, function(price_data){
 
-			var price = RP.Collection.insert({
+			var price = RP.Prices.Collection.insert({
 				Title: price_data.Title,
 				Image: price_data.Image,
 				Cost: price_data.Cost,

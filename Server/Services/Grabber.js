@@ -194,7 +194,7 @@ console.log('1222222222222222');
 
 			}, function() {console.log('Time is over');
 
-			}, 10000);
+			}, 5000);
 		});
 
 		RP.Casper.run(function () {
