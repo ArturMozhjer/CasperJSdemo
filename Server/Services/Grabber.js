@@ -11,7 +11,7 @@ RP.Grabber = new Service({
 
 	},
 
-	run: function() {
+	run: function() {console.log('casper0');
 
 		this.runCasperProcess();
 

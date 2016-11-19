@@ -19,9 +19,9 @@ RP.Casper = require('casper').create({
 
 var _ = global.require('underscore');
 
-require('./classes/Service');
+require('./Classes/Service');
 
-require('./classes/Broadcast');
+require('./Classes/Broadcast');
 
 require('./Services/Grabber');
 
